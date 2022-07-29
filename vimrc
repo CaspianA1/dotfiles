@@ -69,4 +69,5 @@ command S call Windowed()
 
 "Random note on how to use buffers: :e opens one, :bn goes to the next one,
 ":bp to the last one, :bX goes to buffer number X, and :bd closes the current buffer.
+"Also, to redo a command that was undone, press Ctrl-R.
 ":PluginInstall
