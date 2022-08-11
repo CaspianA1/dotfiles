@@ -13,9 +13,8 @@ Plugin 'bfrg/vim-cpp-modern' "Better C syntax highlighting
 Plugin 'tikhomirov/vim-glsl' "GLSL support
 
 "Color schemes
-Plugin 'patstockwell/vim-monokai-tasty'
-Plugin 'ghifarit53/tokyonight-vim'
-Plugin 'lifepillar/vim-solarized8'
+Plugin 'ghifarit53/tokyonight-vim' "A cool dark colorscheme
+Plugin 'lifepillar/vim-gruvbox8' "A variety of dark and light colorschemes
 
 call vundle#end()
 
@@ -42,16 +41,19 @@ function ColorCmd(colorscheme, bg_color)
 	execute printf("colorscheme %s | set bg=%s", a:colorscheme, a:bg_color)
 endfunction
 
-syntax enable
-
-command Light call ColorCmd("solarized8", "light")
-command Dark1 call ColorCmd("vim-monokai-tasty", "dark")
-command Dark2 call ColorCmd("tokyonight", "dark")
+command Light call ColorCmd("gruvbox8_soft", "light")
+command Dark call ColorCmd("tokyonight", "dark")
+command DarkSoft call ColorCmd("gruvbox8_soft", "dark")
+command DarkHard call ColorCmd("gruvbox8_hard", "dark")
 command Default call ColorCmd("default", "light")
 
-Dark2 "The default colorscheme
+syntax enable
+DarkSoft "The default colorscheme
 
-""""" Other stuff
+" set background=dark
+" colorscheme gruvbox8_soft
+
+"""""Other stuff
 
 function Windowed()
 	vert term
