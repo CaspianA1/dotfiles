@@ -1,4 +1,4 @@
-""""" Plugins
+"""""Plugins
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -13,18 +13,18 @@ Plugin 'bfrg/vim-cpp-modern' "Better C syntax highlighting
 Plugin 'tikhomirov/vim-glsl' "GLSL support
 
 "Color schemes
-Plugin 'ghifarit53/tokyonight-vim' "A cool dark colorscheme
 Plugin 'lifepillar/vim-gruvbox8' "A variety of dark and light colorschemes
+Plugin 'ghifarit53/tokyonight-vim' "A cool dark colorscheme
 
 call vundle#end()
 
-""""" Package settings
+"""""Package settings
 
 let g:airline#extensions#tabline#enabled = 1 "Shows all buffers in Airline
 let g:cpp_member_highlight = 1 "Highlights directly referenced struct members (none via pointers)
 let g:cpp_simple_highlight = 1 "Differentiates keywords and typenames when highlighted
 
-""""" Various formatting settings
+"""""Various formatting settings
 
 set number relativenumber "Hybrid line numbers
 set autoindent smartindent "Automatic newline indentation
@@ -35,7 +35,7 @@ set softtabstop=2 "Backspaces have a width of two
 "Associating the .pl extension with Prolog files, not Perl fikes
 au BufRead,BufNewFile *.pl setlocal filetype=prolog
 
-""""" Colorscheme settings
+"""""Colorscheme settings
 
 function ColorCmd(colorscheme, bg_color)
 	execute printf("colorscheme %s | set bg=%s", a:colorscheme, a:bg_color)
@@ -49,9 +49,6 @@ command Default call ColorCmd("default", "light")
 
 syntax enable
 DarkSoft "The default colorscheme
-
-" set background=dark
-" colorscheme gruvbox8_soft
 
 """""Other stuff
 
@@ -67,7 +64,7 @@ endfunction
 
 command S call Windowed()
 
-""""" 
+"""""
 
 "Random note on how to use buffers: :e opens one, :bn goes to the next one,
 ":bp to the last one, :bX goes to buffer number X, and :bd closes the current buffer.
