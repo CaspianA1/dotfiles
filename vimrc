@@ -4,15 +4,11 @@
 " Type `:source %`, and then `:PlugInstall` to install any packages.
 call plug#begin()
 
-Plug 'valloric/youcompleteme' " Autocomplete (to fully install this, look up an installation guide)
 Plug 'scrooloose/nerdtree' " A directory explorer
 Plug 'vim-airline/vim-airline' " A nice status line
 Plug 'bfrg/vim-cpp-modern' " Better C syntax highlighting
 Plug 'tikhomirov/vim-glsl' " GLSL support
-
-" Color schemes
 Plug 'lifepillar/vim-gruvbox8' " A variety of dark and light colorschemes
-Plug 'ghifarit53/tokyonight-vim' " A cool dark colorscheme
 
 call plug#end()
 
@@ -22,7 +18,7 @@ let g:airline#extensions#tabline#enabled = 1 " Shows all buffers in Airline
 let g:cpp_member_highlight = 1 " Highlights directly referenced struct members (none via pointers)
 let g:cpp_simple_highlight = 1 " Differentiates keywords and typenames when highlighted
 
-""""" Various formatting settings
+""""" Various formatting  + other settings
 
 set number relativenumber " Hybrid line numbers
 set autoindent smartindent " Automatic newline indentation
@@ -39,11 +35,12 @@ function ColorCmd(colorscheme, bg_color)
 	execute printf("colorscheme %s | set bg=%s", a:colorscheme, a:bg_color)
 endfunction
 
-command Light call ColorCmd("gruvbox8_soft", "light")
-command Dark call ColorCmd("tokyonight", "dark")
+command Light call ColorCmd("gruvbox8_hard", "light")
 command DarkSoft call ColorCmd("gruvbox8_soft", "dark")
 command DarkHard call ColorCmd("gruvbox8_hard", "dark")
 command Default call ColorCmd("default", "light")
+
+"""""
 
 DarkSoft " The default colorscheme
 
@@ -59,7 +56,7 @@ function Windowed()
 	vertical resize +30 " More space for the code window
 endfunction
 
-command S call Windowed()
+command W call Windowed()
 
 " Random note on how to use buffers: :e opens one, :bn goes to the next one,
 " :bp to the last one, :bX goes to buffer number X, and :bd closes the current buffer.
