@@ -56,7 +56,7 @@ function Windowed()
 	vertical resize +30 " More space for the code window
 endfunction
 
-command W call Windowed()
+command S call Windowed()
 
 " Random note on how to use buffers: :e opens one, :bn goes to the next one,
 " :bp to the last one, :bX goes to buffer number X, and :bd closes the current buffer.
