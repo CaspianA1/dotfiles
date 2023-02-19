@@ -14,17 +14,18 @@ call plug#end()
 
 """"" Package settings
 
-let g:airline#extensions#tabline#enabled = 1 " Shows all buffers in Airline
-let g:cpp_member_highlight = 1 " Highlights directly referenced struct members (none via pointers)
-let g:cpp_simple_highlight = 1 " Differentiates keywords and typenames when highlighted
+let g:airline#extensions#tabline#enabled=1 " Shows all buffers in Airline
+let g:cpp_member_highlight=1 " Highlights directly referenced struct members (none via pointers)
+let g:cpp_simple_highlight=1 " Differentiates keywords and typenames when highlighted
 
 """"" Various formatting  + other settings
 
 set number relativenumber " Hybrid line numbers
-set autoindent smartindent " Automatic newline indentation
-set shiftwidth=2 " Automatic indents have a width of two spaces
-set tabstop=2 " One indentation level looks like two spaces
-set softtabstop=2 " Backspaces have a width of two
+set autoindent smartindent " Automatic indentation
+
+set tabstop=2 " One tab looks like 2 spaces
+set softtabstop=-1 " Pressing the tab key gives `tabstop` spaces
+set shiftwidth=0 " Automatic indents give `tabstop` spaces
 
 " Associating the .pl extension with Prolog files, not Perl files
 au BufRead,BufNewFile *.pl setlocal filetype=prolog
@@ -53,7 +54,7 @@ function Windowed()
 	NERDTree
 
 	wincmd w " Cursor to code window
-	vertical resize +30 " More space for the code window
+	vertical resize +50 " More space for the code window
 endfunction
 
 command S call Windowed()
