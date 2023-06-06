@@ -60,6 +60,7 @@ command Retro call ColorCmd("darkblue", "dark")
 
 function SimpleTerminal(split_call, swap_window_positions)
 	execute printf("%s | term", a:split_call)
+	set ma
 
 	if (a:swap_window_positions)
 		wincmd r
