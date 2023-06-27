@@ -1,9 +1,10 @@
 ---@type ChadrcConfig
- local M = {}
+local M = {}
 
 M.ui = {
-  theme = "ayu_light",
-  theme_toggle = {"ayu_dark", "ayu_light"},
+  theme = "everforest_light",
+  theme_toggle = {"everforest_light", "ayu_dark"},
   nvdash = {load_on_startup = true}
 }
- return M
+
+return M
