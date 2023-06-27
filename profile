@@ -1,4 +1,4 @@
-# Note: I am using the Source Code Pro font with a regular typeface.
+# Note: I am using the CaskaydiaCove Nerd Font with a regular typeface (https://www.nerdfonts.com/font-downloads).
 
 eval "$(/opt/homebrew/bin/brew shellenv)" # Making sure that brew is loaded
 
