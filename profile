@@ -73,7 +73,9 @@ t() {
 
 	if [[ $filename == "" ]]; then
 		echo "No filename!"
-		exit 1
+	else
+		tsc $filename.ts
+		node $filename.js
 	fi
 
 	tsc $filename.ts
