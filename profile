@@ -1,13 +1,10 @@
 # Note: I am using the CaskaydiaCove Nerd Font with a regular typeface (https://www.nerdfonts.com/font-downloads).
 
-eval "$(/opt/homebrew/bin/brew shellenv)" # Making sure that brew is loaded
-
 echo "Good day! Here's a quote:"
 fortune
-# neofetch
 
 prog() {
-	cd ~/Desktop/Programming/$1
+	cd ~/Desktop/programming/$1
 }
 
 down() {
@@ -33,7 +30,9 @@ search() {
 		echo "Please enter a directory."
 	else
 		regex=${@:2}
-		grep -rni "$regex" $dir/*
+		# TODO: make it case-insensitive
+		rg "$regex" $dir/*
+		# grep -rni "$regex" $dir/*
 	fi
 }
 
@@ -69,9 +68,49 @@ replace_all() {
 	grep -rl "$to_substitute" $replacement_directory | LC_ALL=C xargs sed -i "" "s/$to_substitute/$the_substituter/g"
 }
 
+t() {
+	filename=$1
+
+	if [[ $filename == "" ]]; then
+		echo "No filename!"
+		exit 1
+	fi
+
+	tsc $filename.ts
+	node $filename.js
+}
+
+# = neovim config
+vc() {
+  orig_dir="$PWD"
+  cd ~/.config/nvim/lua
+  nvim custom/chadrc.lua
+  cd $orig_dir
+}
+
+venv() {
+  venv_name="$1"
+  venv_dir=~/.virtualenvs/$venv_name
+
+  if [[ "$venv_name" = "" ]]; then
+    echo "Please specify a venv."
+  elif [[ ! -d "$venv_dir" ]]; then
+    echo "The venv with name '$venv_name' doesn't exist! These are available:"
+    ls ~/.virtualenvs
+  else
+    source "$venv_dir/bin/activate"
+  fi
+}
+
 alias :q=exit
 alias cl="clear && printf '\e[3J'"
-alias reload="source ~/.profile"
+
+# Linux-specific:
+# alias open=xdg-open
+# alias reload="source ~/.bashrc"
+
+# MacOS-specific:
+alias reload="source ~/.zshrc"
 
 alias l=cl
 alias s=ls
@@ -87,3 +126,6 @@ alias gti=git
 
 alias p=python3
 alias r="cl; make"
+
+alias dnd="prog dungeon_dave"
+alias dr="cl; ./build.sh release run"
