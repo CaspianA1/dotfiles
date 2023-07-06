@@ -82,24 +82,24 @@ t() {
 
 # = neovim config
 vc() {
-  orig_dir="$PWD"
-  cd ~/.config/nvim/lua
-  nvim custom/chadrc.lua
-  cd $orig_dir
+	orig_dir="$PWD"
+	cd ~/.config/nvim/lua
+	nvim custom/chadrc.lua
+	cd $orig_dir
 }
 
 venv() {
-  venv_name="$1"
-  venv_dir=~/.virtualenvs/$venv_name
+	venv_name="$1"
+	venv_dir=~/.virtualenvs/$venv_name
 
-  if [[ "$venv_name" = "" ]]; then
-    echo "Please specify a venv."
-  elif [[ ! -d "$venv_dir" ]]; then
-    echo "The venv with name '$venv_name' doesn't exist! These are available:"
-    ls ~/.virtualenvs
-  else
-    source "$venv_dir/bin/activate"
-  fi
+	if [[ "$venv_name" = "" ]]; then
+		echo "Please specify a venv."
+	elif [[ ! -d "$venv_dir" ]]; then
+		echo "The venv with name '$venv_name' doesn't exist! These are available:"
+		ls ~/.virtualenvs
+	else
+		source "$venv_dir/bin/activate"
+	fi
 }
 
 alias :q=exit
