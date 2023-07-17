@@ -23,17 +23,17 @@ end, {})
 ---------- Defining the UI
 
 --[[
-	For the light theme, I typically go for "gruvbox_light" or "everforest_light".
-	For the dark theme, I go for "ayu_dark".
+	For the light theme, I go for "everforest_light" or "gruvbox_light".
+	For the dark theme, I go for "ayu_dark" or "gruvbox."
 --]]
 
 local M = {
 	ui = {
-		theme = "gruvbox_light",
-		theme_toggle = {"gruvbox_light", "ayu_dark"},
+		theme = "everforest_light",
+		theme_toggle = {"everforest_light", "gruvbox"},
 		nvdash = {load_on_startup = true},
 		transparency = false
-	}
+	},
 }
 
 return M
@@ -82,7 +82,8 @@ Command info:
 To figure out:
 	- How to reopen the last closed buffer, and how to move buffers around
 	- Floating terminals
-	- A simpler way to quit out of Nvdash
+	- Get custom packages (e.g. 'shade')
+	- Figure out how to get LSP integration for more languages
 	
 Bugs:
 	- There are missing Unicode characters when doing <C-w>
