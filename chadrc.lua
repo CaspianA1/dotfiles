@@ -33,7 +33,7 @@ local M = {
 		theme_toggle = {"everforest_light", "gruvbox"},
 		nvdash = {load_on_startup = true},
 		transparency = false
-	},
+	}
 }
 
 return M
